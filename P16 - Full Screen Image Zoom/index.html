@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/436410382_1136218980915900_5042798022893139571_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kyHfQw-CPMEQ7kNvgFxno_1&_nc_ht=scontent.fdad3-5.fna&oh=00_AYAGzGjlxF30B0GVqFmXMaPNfaLMPu3PiSHIfhf_JERfaA&oe=665F4B20" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NanLux</title>
+    <style>
+        body {
+            background-color: rgba(24, 24, 24, 0.927);
+            font-family: "Roboto", sans-serif;
+        }
+        .container {
+            text-align: center;
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+        #image {
+            width: 25%;
+            height: 25%;
+            border-radius: 10px;
+            filter: drop-shadow(1px 1px 2px yellow);
+            box-shadow: 0 0 25px yellow;
+        }
+
+        .btn {
+            color: white;
+            font-size: 14px;
+            margin: 40px auto;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 15px 80px;
+            background-color: rgb(16, 16, 16);
+            box-shadow: 0 0 25px rgb(0, 0, 0);
+            cursor: pointer;
+            border: 1px solid transparent;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:active {
+            background-color: rgba(50, 50, 50, 0.959);
+            transform: scale(0.95);
+        }
+        .btn:hover {
+            background-color: rgba(14, 14, 14, 0.642);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="image" src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/436410382_1136218980915900_5042798022893139571_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=YQ8IpEZEV7YQ7kNvgGSpID_&_nc_ht=scontent.fdad3-5.fna&oh=00_AYAFYdAA0mL5Crxi6gbN-MSeDEHGRpU3j2q8wre-lklAFw&oe=6672D960" alt="Your Image" class="image">
+        <button id="zoomButton" class="btn">Phóng to ảnh</button>
+    </div>
+
+    <script>
+        document.getElementById('zoomButton').addEventListener('click', () => {
+            const img = document.getElementById('image');
+            const requestFullscreen = img.requestFullscreen
+            || img.mozRequestFullScreen
+            || img.webkitRequestFullscreen
+            || img.msRequestFullscreen;
+
+            requestFullscreen.call(img);
+        });
+
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement) {
+
+            }
+        });
+    </script>
+</body>
+</html>
