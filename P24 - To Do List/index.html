@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/436410382_1136218980915900_5042798022893139571_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kyHfQw-CPMEQ7kNvgFxno_1&_nc_ht=scontent.fdad3-5.fna&oh=00_AYAGzGjlxF30B0GVqFmXMaPNfaLMPu3PiSHIfhf_JERfaA&oe=665F4B20" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>NanLux</title>
+    <style>
+        
+       body {
+        background-color: #FF5B64;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+       }
+
+       .container {
+        border: 3px solid transparent;
+        width: 400px;
+        padding: 0 15px 15px 15px;
+        background-color: aliceblue;
+        border-radius: 7px;
+      }
+
+      .table {
+        flex-direction: column;
+        display: flex;
+      }
+
+      h1, h2, p {
+        text-align: center;
+        margin: 0;
+        padding-top: 15px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 17px;
+        font-weight: 450;
+        margin-bottom: 15px;
+      }
+      
+      span {
+        color: #FF5B64;
+      }
+
+      #taskInput {
+        border-radius: 7px;
+        margin-top: 10px;
+        padding: 7px;
+        background-color: aliceblue;
+        border: 1px solid rgba(181, 181, 181, 0.45);
+        outline: none;
+      }
+
+      #btn1 {
+        border-radius: 7px;
+        padding: 7px;
+        font-weight: bold;
+        color: white;
+        border: 1px solid transparent;
+        background-color: #FF5B64;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+      li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+        font-size: 17px;
+        font-weight: bold;
+        padding-left: 10px;
+        margin-top: 10px;
+      }
+
+      li button {
+        border-radius: 7px;
+        padding: 7px 15px 7px 15px;
+        font-weight: bold;
+        color: white;
+        border: 1px solid transparent;
+        background-color: #FF5B64;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        cursor: pointer;        
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table">
+        <h2>Nan<span>Lux</span></h2>
+        <h1>Tạo Ghi Chú</h1>
+        <input id="taskInput" type="text" placeholder="Nhập ghi chú">
+        <ul id="taskList"></ul>
+        <button id="btn1" onclick="addTask()">Add</button>
+    </div> 
+    <script>
+           function addTask() {
+            var taskInput = document.getElementById('taskInput');
+            var taskList = document.getElementById('taskList');
+
+            var li = document.createElement('li');
+            li.textContent = taskInput.value;
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = function() {
+                taskList.removeChild(li);
+            };
+
+            li.appendChild(deleteButton);
+            taskList.appendChild(li);
+
+            taskInput.value = '';
+           }
+    </script>
+</body>
+</html>

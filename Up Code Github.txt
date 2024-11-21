@@ -1,2 +1,0 @@
-B1 : Ở Desktop chọn git bash : git clone url
-B2 : Ở Folder chọn git bash : git add . ; git commit -m "first commit" ; git push
