@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/436410382_1136218980915900_5042798022893139571_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=kyHfQw-CPMEQ7kNvgFxno_1&_nc_ht=scontent.fdad3-5.fna&oh=00_AYAGzGjlxF30B0GVqFmXMaPNfaLMPu3PiSHIfhf_JERfaA&oe=665F4B20" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta property="og:title" content="NanLux"/>
+    <meta property="og:description" content="Portfolio NanLux"/>
+    <meta property="og:image" content="https://nanlux.tech/Img/CodeWithNanLux.jpg"/>
+
+    <!-- Fontawesome Icon -->
+    <script src="https://kit.fontawesome.com/45a8d7d131.js" crossorigin="anonymous"></script>
+    <title>NanLux</title>
+    <style>
+       body {
+            background-image: url('../Hoshi/Banner4.png');
+            display: flex;
+            margin: 0;
+        }
+
+        .container {
+            padding: 20px 40px;
+        }
+
+        .container p {
+            color: rgb(233, 233, 233);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .table {
+            flex-direction: column;
+            display: flex;
+        }
+
+        h1 {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+            margin-bottom: 0px;
+        }
+
+
+        .btn-share {
+            border-radius: 7px;
+            margin-top: 10px;
+            padding: 15px 15px;
+            font-size: 17px;
+            font-weight: 500;
+            color: white;
+            border: 1px solid transparent;
+            background-color: #059862;
+            cursor: pointer;
+
+        }
+
+        .btn-share:hover {
+            background-color: #04AA6D;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table">
+            <h1>Web Share API</h1>
+            <p>Tôi là sinh viên năm ba ngành Công nghệ Thông tin </br> và cũng là một nhà phát triển web với niềm đam mê </br> khám phá và nâng cao các kỹ năng hacking trong </br> lĩnh vực công nghệ.</p>
+        </div> 
+        <button class="btn-share" id="shareButton"><i class="fa-solid fa-share"></i> Chia sẻ</button>
+    </div>
+
+    <script>
+        
+        // demo by NanLux
+
+        const shareButton = document.getElementById('shareButton');
+
+        shareButton.addEventListener('click', async () => {
+            try {
+                await navigator.share({
+                    title: 'NanLux',
+                    text: 'Trang web này an toàn !',
+                    url: 'https://nanlux.tech',
+                });
+            } catch (error) {
+                // Thông báo lỗi tại đây
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

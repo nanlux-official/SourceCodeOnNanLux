@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+    <link rel="shortcut icon" href="Icon.jpg" type="image/x-icon">
+    <title>Đăng nhập - NanLux</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url('../AntiScam/Img/Banner4.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            overflow-x: hidden; 
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 20px 50px 10px 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 25%;
+        }
+        
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container p a {
+            text-decoration: none;
+            float: right;
+            margin-bottom: 10px;
+            color: #00B3FF;
+        }
+
+        .login-container p a:hover {
+            text-decoration: none;
+            float: right;
+            margin-bottom: 10px;
+            color: #368ABF;
+
+        }
+
+        .login-container p {
+            color: rgb(39, 39, 39);
+        }
+
+        
+        .button input {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .button input:hover {
+            background-color: #218838;
+        }
+        
+        .error {
+            color: red;
+            text-align: center;
+        }
+        
+        .nanlux {
+            margin: 20px 0 0 0;
+            font-size: 15px;
+            color: #717274;
+            float: left;
+        }
+        
+        .nanlux a {
+            color: #00B3FF;
+            text-decoration: none;
+        }
+        
+        .nanlux a:hover {
+            color: #368ABF;
+        }
+        
+        @media(max-width: 1280px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+        
+        @media(max-width: 991px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+        
+        @media(max-width: 895px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+        
+        @media(max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+        
+        @media(max-width: 480px) {
+            .login-container {
+                width: 95%;
+                margin-top: 35%;
+            }
+        }
+        
+        @media(max-width: 335px) {
+            .login-container {
+                width: 85%;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+        
+        .error {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .img-antiscam {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <img src="Icon.jpg" class="img-antiscam">
+        <h2>Login - NanLux</h2>
+        <form action="connect.php" method="POST" id="loginForm">
+            <p>Username</p>
+            <input type="text" id="username" tabindex="1" name="username" placeholder="Enter your username" required>
+            <p>Password <a href="">Forgot Password ?</a></p>
+            <input type="password" id="password" tabindex="2" name="password" placeholder="Enter your password" required>
+            <div class="button">
+                <input type="submit" name="dangnhap" value="Log in">
+            </div>
+        </form>
+
+        <div class="error" id="errorMessage"></div>
+
+        <h2 class="nanlux">© Coded by <a href="https://nanlux.tech" target="_blank">NanLux.tech</a></h2>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        const errorMessage = document.getElementById('errorMessage');
+
+        if (error === 'wrongpassword') {
+            errorMessage.textContent = 'Sai mật khẩu. Vui lòng thử lại.';
+            errorMessage.style.display = 'block';
+        } else if (error === 'wrongusername') {
+            errorMessage.textContent = 'Tài khoản không tồn tại. Vui lòng thử lại.';
+            errorMessage.style.display = 'block';
+        }
+
+        // Ẩn thông báo sau 3 giây
+        if (errorMessage.textContent) {
+            setTimeout(() => {
+                errorMessage.style.display = 'none';
+            }, 223000); // 3000ms = 3 giây
+        }
+    </script>
+</body>
+
+</html>
